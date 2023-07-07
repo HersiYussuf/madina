@@ -4,6 +4,9 @@ from tkinter import messagebox
 import mysql.connector
 from dotenv import load_dotenv
 import os
+from PIL import Image, ImageTk
+#from customer import Cust_Win
+#from home_page import MainPage
 
 load_dotenv()
 
@@ -70,6 +73,9 @@ class Login:
     def reset(self):
         self.txt_user.delete(0, END)
         self.txt_pass.delete(0, END)
+    #/usr/bin/env python3def home_page(self):
+        #self.root.destroy()
+        #self.new_window = Toplevel(self.root)
 
 
 

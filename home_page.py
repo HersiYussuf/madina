@@ -5,6 +5,8 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 from PIL import Image, ImageTk
+from customer import Cust_Win
+#from login import Login
 
 load_dotenv()
 
@@ -39,7 +41,7 @@ class MainPage:
         btn_frame = Frame(main_frame, bd=4, relief=RIDGE)
         btn_frame.place(x=0, y=35, width=228, height=190)
         # customer button
-        cust_btn = Button(btn_frame, text="CUSTOMER", width=25, font=("times new roman", 15, "bold"), bg="black", fg="gold", bd=4, relief=RIDGE, cursor="hand2")
+        cust_btn = Button(btn_frame, text="CUSTOMER", command=self.Cust_details,width=25, font=("times new roman", 15, "bold"), bg="black", fg="gold", bd=4, relief=RIDGE, cursor="hand2")
         cust_btn.grid(row=0, column=0, padx=1, sticky="w")
         # details button
         details_btn = Button(btn_frame, text="DETAILS", width=25, font=("times new roman", 15, "bold"), bg="black", fg="gold", bd=4, relief=RIDGE, cursor="hand2")
@@ -71,6 +73,10 @@ class MainPage:
         self.photoimage5 = ImageTk.PhotoImage(img5)
         lbl_image5 = Label(main_frame, image=self.photoimage5, bd=4, relief=RIDGE)
         lbl_image5.place(x=0, y=380, width=230, height=140)
+    def Cust_details(self):
+        self.new_window = Toplevel(self.root)
+        self.app = Cust_Win(self.new_window)
+
 
 
 if __name__ == "__main__":
