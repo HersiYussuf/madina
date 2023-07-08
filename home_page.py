@@ -5,7 +5,7 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 from PIL import Image, ImageTk
-from customer import Cust_Win
+from cust_win import Cust_Win
 #from login import Login
 
 load_dotenv()
@@ -68,7 +68,7 @@ class MainPage:
         lbl_image4 = Label(main_frame, image=self.photoimage4, bd=4, relief=RIDGE)
         lbl_image4.place(x=0, y=230, width=230, height=140)
         # image 5
-        img5 = Image.open(r"C:\Users\Hersi\Videos\madina\Images\wepik-elegant-linear-luxury-homes-group-logo-20230703055917uoyP.png")
+        img5 = Image.open(r"C:\Users\Hersi\Videos\madina\Images\logo2.png")
         img5 = img5.resize((230, 230), Image.LANCZOS)
         self.photoimage5 = ImageTk.PhotoImage(img5)
         lbl_image5 = Label(main_frame, image=self.photoimage5, bd=4, relief=RIDGE)
