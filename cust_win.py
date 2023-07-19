@@ -10,8 +10,6 @@ class Cust_Win:
         # Title
         lbl_title = Label(self.root, text="CUSTOMER DETAILS", font=("times new roman", 18, "bold"), bd=4, relief="ridge")
         lbl_title.place(x=0, y=0, width=1295, height=50)
-
-        
         # Logo
         img1 = Image.open("Images/madinalogo.jpg")
         img1 = img1.resize((100, 40), Image.LANCZOS)
@@ -27,7 +25,6 @@ class Cust_Win:
         lbl_receipt.grid(row=0, column=0, sticky=W)
         entry_receipt = ttk.Entry(labelframeleft, font=("arial", 10, "bold"), width=20)
         entry_receipt.grid(row=0, column=1)
-        
         # Room no
         lbl_room = Label(labelframeleft,text="ROOM NUMBER", font=("arial", 10, "bold"), padx=2, pady=3)
         lbl_room.grid(row=1, column=0, sticky=W)
@@ -54,7 +51,6 @@ class Cust_Win:
         lbl_balance.grid(row=5, column=0, sticky=W)
         entry_balance = ttk.Entry(labelframeleft, font=("arial", 10, "bold"), width=20)
         entry_balance.grid(row=5, column=1)
-       
         # Daily Charges
         lbl_daily = Label(labelframeleft,text="DAILY CHARGES", font=("arial", 10, "bold"), padx=2, pady=3)
         lbl_daily.grid(row=6, column=0, sticky=W)
@@ -65,7 +61,7 @@ class Cust_Win:
         lbl_total.grid(row=7, column=0, sticky=W)
         entry_total = ttk.Entry(labelframeleft, font=("arial", 10, "bold"), width=20)
         entry_total.grid(row=7, column=1)
-        
+
         # Other services
         lbl_services = Label(labelframeleft,text="OTHER SERVICES", font=("arial", 10, "bold"), padx=2, pady=3)
         lbl_services.grid(row=8, column=0, sticky=W)
@@ -86,7 +82,6 @@ class Cust_Win:
         lbl_balance_pay.grid(row=11, column=0, sticky=W)
         entry_balance_pay = ttk.Entry(labelframeleft, font=("arial", 10, "bold"), width=20)
         entry_balance_pay.grid(row=11, column=1)
-        
         # Button frame
         btn_frame = Frame(labelframeleft, bd=2, relief="ridge")
         btn_frame.place(x=0, y=350, width=412, height=40)
@@ -152,7 +147,6 @@ class Cust_Win:
         self.CustomerDetails_Table.heading("Balance to pay", text="Balance to pay")
 
         self.CustomerDetails_Table['show'] = 'headings'
-       
 
         self.CustomerDetails_Table.column("Receipt number", width=80)
         self.CustomerDetails_Table.column("Room no", width=80)
@@ -168,11 +162,6 @@ class Cust_Win:
         self.CustomerDetails_Table.column("Balance to pay", width=80)
 
         self.CustomerDetails_Table.pack(fill=BOTH, expand=1)
-
-        
-
-
-        
 if __name__ == "__main__":
     root = Tk()
     obj = Cust_Win(root)
