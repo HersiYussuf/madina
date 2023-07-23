@@ -1,7 +1,7 @@
-# **Madina**
-# Modular Programming Design for Hotel Management System
+# **Madina Hotel: Management system**
+# Programming Design for Hotel Management System
 
-In the Hotel Management System project, we have several files that handle different functionalities. To ensure a well-organized and modular design, we can structure the files using modular programming principles. Let's take a look at how we can organize the files:
+In the Hotel Management System project, we have several files that handle different functionalities. To ensure a well-organized and modular design, we can structure the files using modular programming principles.
 
 ## File Structure
 
@@ -30,17 +30,4 @@ The `hotel_expenses.py` module handles hotel-related expenses. It includes funct
 ### staff_expenses.py
 The `staff_expenses.py` module manages staff-related expenses. It includes functions to handle staff payroll, reimbursements, and other financial matters related to the hotel's staff.
 
-## Benefits of Modular Programming
-
-- **Code Organization:** Modular programming helps in organizing code into separate modules, making it easier to understand and maintain.
-
-- **Reusability:** Each module can be reused in different parts of the application, reducing redundant code and promoting code reuse.
-
-- **Separation of Concerns:** Modules focus on specific functionalities, promoting the separation of concerns and improving code readability.
-
-- **Ease of Testing:** Modular design allows for easier unit testing as each module can be tested independently.
-
-- **Scalability:** As the project grows, modular programming allows for easier expansion and integration of new features.
-
-By adopting a modular programming approach, we ensure a well-structured and maintainable Hotel Management System project.
 
