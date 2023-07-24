@@ -1,12 +1,28 @@
 from tkinter import *
 from PIL import Image,ImageTk
 from tkinter import ttk
+import random
 class Cust_Win:
     def __init__(self,root):
         self.root = root
         self.root.title("HOTEL MANAGEMENT SYSTEM:")
-        self.root.geometry("1295x550+230+220")
+        self.root.geometry("1295x550+0+0")
         #self.root.geometry("1295x550+0+0")
+        # =============variables================
+        self.var_receipt = StringVar()
+        x = random.randint(1000, 9999)
+        self.var_receipt.set(str(x))
+        self.var_roomno = StringVar()
+        self.var_customer = StringVar()
+        self.var_phone = StringVar()
+        self.var_idpassport = StringVar()
+        self.var_balancebf = StringVar()
+        self.var_dailycharges = StringVar()
+        self.var_totalamountdue = StringVar()
+        self.var_otherservices = StringVar()
+        self.var_amountpaid = StringVar()
+        self.var_advance = StringVar()
+        self.var_balance_to_pay = StringVar()
         # Title
         lbl_title = Label(self.root, text="CUSTOMER DETAILS", font=("times new roman", 18, "bold"), bd=4, relief="ridge")
         lbl_title.place(x=0, y=0, width=1295, height=50)
