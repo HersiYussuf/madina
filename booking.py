@@ -2,14 +2,91 @@ from tkinter import *
 from tkinter import ttk
 
 # Function to handle the Print Receipt button
-def print_receipt():
-    # Add your code here to handle printing the receipt
-    pass
+def calculate_total(items):
+    # Helper function to calculate the total price of purchased items
+    total = 0
+    for item in items:
+        total += item["price"] * item["quantity"]
+    return total
+
+def print_receipt(billing_details, purchased_items):
+    # Print the header of the receipt
+    print("----- Receipt -----")
+
+    # Print billing details
+    print("Name:", billing_details.get("name", ""))
+    print("Address:", billing_details.get("address", ""))
+    print("Email:", billing_details.get("email", ""))
+    print("Phone:", billing_details.get("phone", ""))
+
+    # Print purchased items
+    print("\n-- Purchased Items --")
+    for index, item in enumerate(purchased_items, start=1):
+        print(f"{index}. {item['name']} x {item['quantity']} - ${item['price'] * item['quantity']}")
+
+    # Calculate and print the total
+    total = calculate_total(purchased_items)
+    print("Total:", total)
+
+    # Print the footer of the receipt
+    print("--------------------")
+
+# Example usage:
+billing_details = {
+    "name": "John Doe",
+    "address": "123 Main Street",
+    "email": "john@example.com",
+    "phone": "555-1234"
+}
+
+purchased_items = [
+    {"name": "Item 1", "price": 10, "quantity": 2},
+    {"name": "Item 2", "price": 5, "quantity": 3},
+    {"name": "Item 3", "price": 15, "quantity": 1},
+]
+
+print_receipt(billing_details, purchased_items)
+
 
 # Function to handle the Edit and Update button
-def edit_update():
-    # Add your code here to handle editing and updating the billing details
-    pass
+def edit_update(billing_details):
+    # Display the current billing details
+    print("Current Billing Details:")
+    print("Name:", billing_details.get("name", ""))
+    print("Address:", billing_details.get("address", ""))
+    print("Email:", billing_details.get("email", ""))
+    print("Phone:", billing_details.get("phone", ""))
+
+    # Ask the user if they want to edit the billing details
+    choice = input("Do you want to edit the billing details? (yes/no): ").lower()
+
+    if choice == "yes":
+        # Ask the user for the updated details
+        updated_name = input("Enter the updated name: ")
+        updated_address = input("Enter the updated address: ")
+        updated_email = input("Enter the updated email: ")
+        updated_phone = input("Enter the updated phone number: ")
+
+        # Update the billing details dictionary
+        billing_details["name"] = updated_name
+        billing_details["address"] = updated_address
+        billing_details["email"] = updated_email
+        billing_details["phone"] = updated_phone
+
+        print("Billing details updated successfully!")
+    else:
+        print("No changes were made to the billing details.")
+
+# Example usage:
+billing_details = {
+    "name": "John Doe",
+    "address": "123 Main Street",
+    "email": "john@example.com",
+    "phone": "555-1234"
+}
+
+edit_update(billing_details)
+
 
 # Creating the main window
 root = Tk()
